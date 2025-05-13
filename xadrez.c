@@ -2,7 +2,7 @@
 
 int main() {
    //Fiz um menu interativo, para proveitar e treinar outras coisas que aprendir e para dar uma melhorada e mais atrativo.
-int jogador1, i2 = 0, numero;
+int jogador1, i2 = 0, i3, j, numero;
 char rainha, bispo, torre;
 
  printf("******Bem-vindo ao jogo de xadrez******\n");
@@ -10,6 +10,7 @@ char rainha, bispo, torre;
  printf("1 para TORRE.\n");
  printf("2 para BISPO.\n");
  printf("3 para RAINHA\n");
+ printf("4 para CAVALO\n");
  scanf("%d", &jogador1 );
 
  switch (jogador1)
@@ -47,15 +48,27 @@ break;
      printf("Obrigado por jogar!\n");
 
  break;
+ case 4:
+  for( i3 = 1; i3 <= 1; i3++){
+
+       printf("Cavalo\n");
+        printf("\n");   
+        for (  j = 1; j <= i3; j++)
+        {
+          printf("Baixo\n");
+          
+          printf("Baixo\n");
+          
+          printf("Esquerda\n");
+        }
+        printf("\n");
+    }
+break;
  default:
      printf("Saindo do jogo...\n");
      break;
  }
  
- 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
