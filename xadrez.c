@@ -48,7 +48,8 @@ break;
      printf("Obrigado por jogar!\n");
 
  break;
- case 4:
+ case 4: /*Aqui o jogador escolhe a opção do cavalo e com isso o cavalo se movimenta duas vezes para baixo e uma para esquerda. 
+usando a opção for para fazer o loop alinhada*/
   for( i3 = 1; i3 <= 1; i3++){
 
        printf("Cavalo\n");
