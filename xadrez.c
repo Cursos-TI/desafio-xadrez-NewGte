@@ -1,5 +1,40 @@
 #include <stdio.h>
 
+void movertorre(int casa1){
+    if (casa1 > 0)
+    {
+       printf("direita\n");
+       movertorre(casa1 - 1);
+    }
+}
+void moverbispo(int casa2){
+    
+    if (casa2 > 0){
+    moverbispo(casa2 - 1);
+       int movimentocompleto = 1;
+
+    while (movimentocompleto--)
+    {
+        for (int i = 0; i < 5; i++){
+            printf("Diagonal\n");
+        }
+        printf("Direita\n");
+    }
+    }
+}
+void moverRainha(int casa3){
+    if (casa3 > 0)
+    {
+        printf("Esquerda\n");
+        moverRainha(casa3 - 1);
+    }
+    
+}
+    
+    
+    
+
+
 int main() {
    //Fiz um menu interativo, para proveitar e treinar outras coisas que aprendir e para dar uma melhorada e mais atrativo.
 int jogador1, i2 = 0, i3, j, numero;
@@ -12,40 +47,22 @@ char rainha, bispo, torre;
  printf("3 para RAINHA\n");
  printf("4 para CAVALO\n");
  scanf("%d", &jogador1 );
-
+//Coloquei um switch para dar uma interação bacana para o jogador. aproveitei para treinar também.
  switch (jogador1)
  {
  case 1:
-     printf("Torre\n");
-         for ( int i = 0; i < 5; i++){
-             printf("Direita\n");}
+    printf("Torre:\n");
+    movertorre(5);
 break;  
- case 2:
- printf("Bispo\n");
-       while (i2 <= 5)
-    {
-        if(i2 != 0)
-        {
-            printf("direita, cima!\n");
-        }
-        
-        i2++;
-    }
-     break;
- case 3://Aqui fiz a rainha andar 8 casas, dando a opção para o jogador escolher qual número. sendo que 8 e o verdadeiro.
-    do {
-        printf("Digite o numero 8 para a rainha andar 8 casas.\n");
-        scanf("%d", &numero);
+ case 2: //juntoi a estrutura alinhada com a recursiva.
+printf("Bispo:\n");
+ moverbispo(1);
 
-        if(numero == 8){
-            printf("Rainha: 8 casas para a esquerda\n");
-        } else {
-            printf("Saindo do jogo...\n");
-        }
-        
-    } while(numero < 8 && numero > 8);
-     
-     printf("Obrigado por jogar!\n");
+   
+ break;
+ case 3://Aqui fiz a rainha andar 8 casas, dando a opção para o jogador escolher qual número. sendo que 8 e o verdadeiro.
+   printf("Rainha:\n");
+   moverRainha(8);
 
  break;
  case 4: /*Aqui o jogador escolhe a opção do cavalo e com isso o cavalo se movimenta duas vezes para baixo e uma para esquerda. 
@@ -53,14 +70,14 @@ usando a opção for para fazer o loop alinhada*/
   for( i3 = 1; i3 <= 1; i3++){
 
        printf("Cavalo\n");
-        printf("\n");   
+           
         for (  j = 1; j <= i3; j++)
         {
-          printf("Baixo\n");
+          printf("Cima\n");
           
-          printf("Baixo\n");
+          printf("Cima\n");
           
-          printf("Esquerda\n");
+          printf("Direita\n");
         }
         printf("\n");
     }
